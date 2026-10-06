@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Motilal Oswal — Initiating Coverage Tracker</title>
+<style>
+  :root { --bg:#0f1420; --card:#1a2233; --text:#e8edf5; --muted:#8b96ad;
+          --green:#34d399; --red:#f87171; --accent:#60a5fa; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+         background:var(--bg); color:var(--text); padding:16px; }
+  h1 { font-size:1.25rem; margin:0 0 4px; }
+  .sub { color:var(--muted); font-size:.85rem; margin-bottom:16px; }
+  .cards { display:flex; gap:12px; flex-wrap:wrap; margin-bottom:16px; }
+  .card { background:var(--card); border-radius:10px; padding:12px 16px; min-width:130px; }
+  .card .k { font-size:.72rem; color:var(--muted); text-transform:uppercase; letter-spacing:.04em; }
+  .card .v { font-size:1.35rem; font-weight:700; margin-top:4px; }
+  .pos { color:var(--green); } .neg { color:var(--red); }
+  table { width:100%; border-collapse:collapse; background:var(--card);
+          border-radius:10px; overflow:hidden; font-size:.85rem; }
+  th, td { padding:10px 12px; text-align:right; white-space:nowrap; }
+  th:first-child, td:first-child { text-align:left; }
+  th { color:var(--muted); font-weight:600; font-size:.75rem; text-transform:uppercase;
+       letter-spacing:.04em; cursor:pointer; user-select:none; }
+  th:hover { color:var(--text); }
+  tbody tr { border-top:1px solid #2a3448; }
+  tbody tr:hover { background:#222c42; }
+  .sym { font-weight:700; } .name { color:var(--muted); font-size:.78rem; }
+  .seg { display:inline-block; padding:2px 8px; border-radius:20px; font-size:.72rem;
+         background:#2a3448; color:var(--accent); }
+  .wrap { overflow-x:auto; }
+  .foot { color:var(--muted); font-size:.78rem; margin-top:12px; }
+  .err { background:#3a1d1d; color:#fca5a5; padding:12px; border-radius:8px; }
+</style>
+</head>
+<body>
+<h1>Motilal Oswal — Initiating Coverage Tracker</h1>
+<div class="sub" id="updated">loading…</div>
+<div class="cards" id="cards"></div>
+<div class="wrap"><table id="tbl"><thead><tr>
+  <th data-k="symbol">Stock</th><th data-k="source">Broker</th><th data-k="initiation_date">Initiated</th>
+  <th data-k="initiation_price">Init ₹</th><th data-k="latest_price">Latest ₹</th>
+  <th data-k="stock_return_pct">Stock %</th><th data-k="segment">Segment</th>
+  <th data-k="benchmark">Benchmark</th><th data-k="index_return_pct">Index %</th>
+  <th data-k="excess_pct">Excess %</th><th data-k="target">Target</th>
+</tr></thead><tbody></tbody></table></div>
+<div class="foot">Each pick is benchmarked against its market-cap index (Nifty 50 / Midcap 150 / Smallcap 250)
+over the same window. Excess % = stock return − index return. Educational tracking only.</div>
+
+<script>
+let picks = [], sortK = "initiation_date", sortDir = -1;
+const fmt = (v, suf="") => v == null ? "—" : v.toFixed(1) + suf;
+const cls = v => v == null ? "" : (v >= 0 ? "pos" : "neg");
+
+fetch("data/picks.json").then(r => r.json()).then(d => {
+  picks = d.picks || [];
+  render();
+}).catch(() => {
+  document.getElementById("updated").innerHTML =
+    '<div class="err">Could not load data/picks.json</div>';
+});
+
+function render() {
+  const n = picks.length;
+  const ex = picks.map(p => p.excess_pct).filter(v => v != null);
+  const hit = ex.filter(v => v > 0).length;
+  const avg = ex.length ? ex.reduce((a,b)=>a+b,0)/ex.length : null;
+  const upd = picks.map(p => p.updated_at).sort().slice(-1)[0];
+  document.getElementById("updated").textContent =
+    n + " picks tracked" + (upd ? " · data as of " + upd.slice(0,10) : "");
+  document.getElementById("cards").innerHTML = [
+    ["Picks", n, ""],
+    ["Avg excess", fmt(avg,"%"), cls(avg)],
+    ["Beating benchmark", n ? hit + " / " + n : "—", hit/n >= .5 ? "pos" : "neg"],
+  ].map(([k,v,c]) => `<div class="card"><div class="k">${k}</div><div class="v ${c}">${v}</div></div>`).join("");
+
+  const rows = [...picks].sort((a,b) => {
+    const va = a[sortK], vb = b[sortK];
+    if (va == null) return 1; if (vb == null) return -1;
+    return (va > vb ? 1 : va < vb ? -1 : 0) * sortDir;
+  });
+  document.querySelector("#tbl tbody").innerHTML = rows.map(p => `<tr>
+    <td><span class="sym">${p.symbol.replace(".NS","")}</span><br><span class="name">${p.name||""}</span></td>
+    <td>${p.source||""}</td>
+    <td>${p.initiation_date}</td>
+    <td>₹${p.initiation_price?.toLocaleString("en-IN")}</td>
+    <td>₹${p.latest_price?.toLocaleString("en-IN")}</td>
+    <td class="${cls(p.stock_return_pct)}">${fmt(p.stock_return_pct,"%")}</td>
+    <td><span class="seg">${p.segment}</span></td>
+    <td>${p.benchmark}</td>
+    <td class="${cls(p.index_return_pct)}">${fmt(p.index_return_pct,"%")}</td>
+    <td class="${cls(p.excess_pct)}"><b>${fmt(p.excess_pct,"%")}</b></td>
+    <td>${p.target ? "₹"+p.target.toLocaleString("en-IN")+(p.rating?" · "+p.rating:"") : "—"}</td>
+  </tr>`).join("");
+}
+document.querySelectorAll("th").forEach(th => th.addEventListener("click", () => {
+  const k = th.dataset.k;
+  if (sortK === k) sortDir *= -1; else { sortK = k; sortDir = -1; }
+  render();
+}));
+</script>
+</body>
+</html>
