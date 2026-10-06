@@ -37,13 +37,17 @@ No pip dependencies — everything is stdlib + Yahoo Finance.
   (`NIFTYSMLCAP250.NS`). Nifty Next 50 (`^NSMIDCP`) available as an override.
 - Educational tracking only — not investment advice.
 
-## Automation (lives OUTSIDE this repo)
+## Automation
 
-The mail watcher + daily refresher are deliberately not part of this repo (they
-need mailbox access). They live on the operator's machine, import `tracker` as a
-library, and push updated `data/picks.json` back here:
+**Daily EOD refresh** runs inside this repo via GitHub Actions
+(`.github/workflows/refresh.yml`): every Mon–Fri at 11:15 UTC (4:45 PM IST,
+after the NSE close) it runs `python cli.py refresh`, commits the updated
+`data/picks.json`, and Pages redeploys the portal. Fully automatic — no
+approvals, no tokens. `workflow_dispatch` allows a manual run from the
+Actions tab.
 
-- **On new initiating-coverage mail** → extract ticker/date/target/rating →
-  `tracker.add_ticker(...)` → commit + push.
-- **Daily EOD** (after NSE close) → `tracker.refresh_all()` → commit + push.
-  Pages redeploys the portal automatically.
+**Mail watcher (outside this repo):** when a new initiating-coverage mail
+arrives, the operator's automation extracts ticker/date/target/rating and
+calls `tracker.add_ticker(...)` — adding a ticker runs the full calculation —
+then pushes the updated `data/picks.json` here. Kept separate because it
+needs mailbox access, which doesn't belong in the repo.
