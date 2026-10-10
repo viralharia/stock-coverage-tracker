@@ -1,0 +1,28 @@
+name: Daily EOD refresh
+# Updates latest prices for every tracked pick after the NSE close.
+# 11:15 UTC Mon-Fri = 4:45 PM IST, safely after the 3:30 PM IST close.
+
+on:
+  schedule:
+    - cron: '15 11 * * 1-5'
+  workflow_dispatch: {}
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Refresh prices
+        run: python cli.py refresh
+      - name: Commit and push
+        run: |
+          git config user.name "coverage-tracker"
+          git config user.email "coverage-tracker@users.noreply.github.com"
+          git add data/picks.json
+          git diff --staged --quiet || git commit -m "EOD refresh $(date -u +%F)"
+          git push
