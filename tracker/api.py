@@ -110,15 +110,27 @@ def refresh_all(provider=None, bundles=None):
             b = bundles[p["symbol"]]
             latest_day, latest_price = b["latest"]
             b_day, b_latest = b["bench_latest"]
+            # Bundle callers must pass benchmark levels on the same scale as
+            # p["benchmark_init"] (raw index levels, not rebased).
+            b_init_day, b_init = b.get("bench_init", (p["benchmark_init_date"],
+                                                      p["benchmark_init"]))
         else:
             latest_day, latest_price = prov.latest_close(p["symbol"])
+            # Always re-derive the raw index level at initiation: stored
+            # benchmark_init values may predate the raw-level migration
+            # (early seeds were rebased to 100), and comparing a raw latest
+            # level against a rebased init is what produced the 68000% bug.
+            b_init_day, b_init = prov.close_on_or_before(
+                p["benchmark_symbol"], p["initiation_date"])
             b_day, b_latest = prov.latest_close(p["benchmark_symbol"])
         p["latest_price"] = latest_price
         p["latest_date"] = latest_day
+        p["benchmark_init"] = b_init
+        p["benchmark_init_date"] = b_init_day
         p["benchmark_latest"] = b_latest
         p["benchmark_latest_date"] = b_day
         p["stock_return_pct"] = _pct(latest_price, p["initiation_price"])
-        p["index_return_pct"] = _pct(b_latest, p["benchmark_init"])
+        p["index_return_pct"] = _pct(b_latest, b_init)
         p["excess_pct"] = round(p["stock_return_pct"] - p["index_return_pct"], 2)
         p["updated_at"] = _now()
     store.save(data)
