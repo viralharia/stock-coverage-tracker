@@ -23,7 +23,7 @@
       "stock_return_pct": -4.31,
       "index_return_pct": -0.7,
       "excess_pct": -3.61,
-      "updated_at": "2026-10-10T22:30:09+00:00"
+      "updated_at": "2026-10-12T20:15:55+00:00"
     },
     {
       "symbol": "TORNTPOWER.NS",
@@ -48,7 +48,7 @@
       "stock_return_pct": -4.15,
       "index_return_pct": -2.27,
       "excess_pct": -1.88,
-      "updated_at": "2026-10-10T22:30:11+00:00"
+      "updated_at": "2026-10-12T20:15:56+00:00"
     },
     {
       "symbol": "ASTERDM.NS",
@@ -73,7 +73,7 @@
       "stock_return_pct": -6.31,
       "index_return_pct": -3.05,
       "excess_pct": -3.26,
-      "updated_at": "2026-10-10T22:30:14+00:00"
+      "updated_at": "2026-10-12T20:15:56+00:00"
     },
     {
       "symbol": "PINELABS.NS",
@@ -98,7 +98,7 @@
       "stock_return_pct": -15.33,
       "index_return_pct": -5.32,
       "excess_pct": -10.01,
-      "updated_at": "2026-10-10T22:30:16+00:00"
+      "updated_at": "2026-10-12T20:15:56+00:00"
     },
     {
       "symbol": "SOLARINDS.NS",
@@ -123,7 +123,7 @@
       "stock_return_pct": 3.82,
       "index_return_pct": -5.43,
       "excess_pct": 9.25,
-      "updated_at": "2026-10-10T22:30:17+00:00"
+      "updated_at": "2026-10-12T20:15:56+00:00"
     },
     {
       "symbol": "TURTLEMINT.NS",
@@ -148,7 +148,7 @@
       "stock_return_pct": -47.95,
       "index_return_pct": -2.41,
       "excess_pct": -45.54,
-      "updated_at": "2026-10-10T22:30:20+00:00"
+      "updated_at": "2026-10-12T20:15:56+00:00"
     },
     {
       "symbol": "PWL.NS",
@@ -173,7 +173,7 @@
       "stock_return_pct": 13.37,
       "index_return_pct": -6.47,
       "excess_pct": 19.84,
-      "updated_at": "2026-10-10T22:30:21+00:00"
+      "updated_at": "2026-10-12T20:15:57+00:00"
     },
     {
       "symbol": "ADANIPOWER.NS",
@@ -198,7 +198,7 @@
       "stock_return_pct": -9.26,
       "index_return_pct": -6.69,
       "excess_pct": -2.57,
-      "updated_at": "2026-10-10T22:30:23+00:00"
+      "updated_at": "2026-10-12T20:15:57+00:00"
     },
     {
       "symbol": "ADANIENT.NS",
@@ -223,7 +223,7 @@
       "stock_return_pct": -16.87,
       "index_return_pct": -6.52,
       "excess_pct": -10.35,
-      "updated_at": "2026-10-10T22:30:25+00:00"
+      "updated_at": "2026-10-12T20:15:57+00:00"
     },
     {
       "symbol": "CPPLUS.NS",
@@ -248,7 +248,7 @@
       "stock_return_pct": 20.66,
       "index_return_pct": -8.12,
       "excess_pct": 28.78,
-      "updated_at": "2026-10-10T22:30:27+00:00"
+      "updated_at": "2026-10-12T20:15:57+00:00"
     },
     {
       "symbol": "EMCURE.NS",
@@ -273,7 +273,7 @@
       "stock_return_pct": -1.53,
       "index_return_pct": -5.93,
       "excess_pct": 4.4,
-      "updated_at": "2026-10-10T22:30:29+00:00"
+      "updated_at": "2026-10-12T20:15:57+00:00"
     },
     {
       "symbol": "UNIMECH.NS",
@@ -298,7 +298,7 @@
       "stock_return_pct": 33.45,
       "index_return_pct": -2.95,
       "excess_pct": 36.4,
-      "updated_at": "2026-10-10T22:30:30+00:00"
+      "updated_at": "2026-10-12T20:15:58+00:00"
     },
     {
       "symbol": "SAATVIKGL.NS",
@@ -323,7 +323,7 @@
       "stock_return_pct": -15.2,
       "index_return_pct": -2.23,
       "excess_pct": -12.97,
-      "updated_at": "2026-10-10T22:30:33+00:00"
+      "updated_at": "2026-10-12T20:15:58+00:00"
     },
     {
       "symbol": "UNOMINDA.NS",
@@ -348,7 +348,7 @@
       "stock_return_pct": -2.63,
       "index_return_pct": -3.85,
       "excess_pct": 1.22,
-      "updated_at": "2026-10-10T22:30:34+00:00"
+      "updated_at": "2026-10-12T20:15:58+00:00"
     }
   ]
 }
