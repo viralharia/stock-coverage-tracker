@@ -1,6 +1,31 @@
 {
   "picks": [
     {
+      "symbol": "ICICIBANK.NS",
+      "name": "ICICI Bank Ltd",
+      "source": "Motilal Oswal",
+      "initiation_date": "2026-10-19",
+      "initiation_price": 1397.0,
+      "initiation_price_date": "2026-10-16",
+      "target": null,
+      "rating": "Buy",
+      "note": "Investment Idea (not initiating coverage) — MOSL mail Oct 19, 2026: Buy, 25% upside potential stated; no explicit target in mail. Prices: Yahoo blocked on this network; initiation/latest closes verified via Finnhub daily candles (ICICIBANK.NS); Nifty 50 Oct 16 close 23,146.15 verified via convictioncaution.com daily market analysis (Oct 19) and tick2trade (PREV CLOSE 23,146.15). Initiation price uses nearest prior trading day (Oct 16) since the Oct 19 NSE session had not closed at run time.",
+      "market_cap_cr": 1001474.6,
+      "segment": "large",
+      "benchmark": "Nifty 50",
+      "benchmark_symbol": "^NSEI",
+      "benchmark_init": 23146.15,
+      "benchmark_init_date": "2026-10-16",
+      "latest_price": 1397.0,
+      "latest_date": "2026-10-16",
+      "benchmark_latest": 23146.15,
+      "benchmark_latest_date": "2026-10-16",
+      "stock_return_pct": 0.0,
+      "index_return_pct": 0.0,
+      "excess_pct": 0.0,
+      "updated_at": "2026-10-19T08:27:53+00:00"
+    },
+    {
       "symbol": "POLYCAB.NS",
       "name": "Polycab India Ltd",
       "source": "Motilal Oswal",
