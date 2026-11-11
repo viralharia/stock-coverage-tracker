@@ -23,7 +23,7 @@
       "stock_return_pct": 33.54,
       "index_return_pct": 6.07,
       "excess_pct": 27.47,
-      "updated_at": "2026-11-10T18:39:38+00:00"
+      "updated_at": "2026-11-11T18:39:11+00:00"
     },
     {
       "symbol": "INDHOTEL.NS",
@@ -48,7 +48,7 @@
       "stock_return_pct": 18.41,
       "index_return_pct": 10.39,
       "excess_pct": 8.02,
-      "updated_at": "2026-11-10T18:39:38+00:00"
+      "updated_at": "2026-11-11T18:39:12+00:00"
     },
     {
       "symbol": "ICICIBANK.NS",
@@ -73,7 +73,7 @@
       "stock_return_pct": 13.74,
       "index_return_pct": 9.42,
       "excess_pct": 4.32,
-      "updated_at": "2026-11-10T18:39:39+00:00"
+      "updated_at": "2026-11-11T18:39:12+00:00"
     },
     {
       "symbol": "POLYCAB.NS",
@@ -98,7 +98,7 @@
       "stock_return_pct": -4.7,
       "index_return_pct": 8.2,
       "excess_pct": -12.9,
-      "updated_at": "2026-11-10T18:39:39+00:00"
+      "updated_at": "2026-11-11T18:39:12+00:00"
     },
     {
       "symbol": "MOLBIO.NS",
@@ -123,7 +123,7 @@
       "stock_return_pct": -11.13,
       "index_return_pct": 3.0,
       "excess_pct": -14.13,
-      "updated_at": "2026-11-10T18:39:40+00:00"
+      "updated_at": "2026-11-11T18:39:12+00:00"
     },
     {
       "symbol": "TORNTPOWER.NS",
@@ -148,7 +148,7 @@
       "stock_return_pct": -0.33,
       "index_return_pct": 4.36,
       "excess_pct": -4.69,
-      "updated_at": "2026-11-10T18:39:40+00:00"
+      "updated_at": "2026-11-11T18:39:13+00:00"
     },
     {
       "symbol": "ASTERDM.NS",
@@ -173,7 +173,7 @@
       "stock_return_pct": -1.81,
       "index_return_pct": 3.53,
       "excess_pct": -5.34,
-      "updated_at": "2026-11-10T18:39:40+00:00"
+      "updated_at": "2026-11-11T18:39:13+00:00"
     },
     {
       "symbol": "PINELABS.NS",
@@ -198,7 +198,7 @@
       "stock_return_pct": -16.0,
       "index_return_pct": -1.79,
       "excess_pct": -14.21,
-      "updated_at": "2026-11-10T18:39:40+00:00"
+      "updated_at": "2026-11-11T18:39:13+00:00"
     },
     {
       "symbol": "SOLARINDS.NS",
@@ -223,7 +223,7 @@
       "stock_return_pct": -1.25,
       "index_return_pct": 0.98,
       "excess_pct": -2.23,
-      "updated_at": "2026-11-10T18:39:41+00:00"
+      "updated_at": "2026-11-11T18:39:14+00:00"
     },
     {
       "symbol": "TURTLEMINT.NS",
@@ -248,7 +248,7 @@
       "stock_return_pct": -54.99,
       "index_return_pct": -2.4,
       "excess_pct": -52.59,
-      "updated_at": "2026-11-10T18:39:41+00:00"
+      "updated_at": "2026-11-11T18:39:14+00:00"
     },
     {
       "symbol": "PWL.NS",
@@ -273,7 +273,7 @@
       "stock_return_pct": -0.07,
       "index_return_pct": -0.13,
       "excess_pct": 0.06,
-      "updated_at": "2026-11-10T18:39:42+00:00"
+      "updated_at": "2026-11-11T18:39:14+00:00"
     },
     {
       "symbol": "ADANIPOWER.NS",
@@ -298,7 +298,7 @@
       "stock_return_pct": -1.1,
       "index_return_pct": -0.36,
       "excess_pct": -0.74,
-      "updated_at": "2026-11-10T18:39:42+00:00"
+      "updated_at": "2026-11-11T18:39:14+00:00"
     },
     {
       "symbol": "ADANIENT.NS",
@@ -323,7 +323,7 @@
       "stock_return_pct": -14.6,
       "index_return_pct": 3.96,
       "excess_pct": -18.56,
-      "updated_at": "2026-11-10T18:39:42+00:00"
+      "updated_at": "2026-11-11T18:39:14+00:00"
     },
     {
       "symbol": "CPPLUS.NS",
@@ -348,7 +348,7 @@
       "stock_return_pct": 21.8,
       "index_return_pct": -1.89,
       "excess_pct": 23.69,
-      "updated_at": "2026-11-10T18:39:43+00:00"
+      "updated_at": "2026-11-11T18:39:15+00:00"
     },
     {
       "symbol": "EMCURE.NS",
@@ -373,7 +373,7 @@
       "stock_return_pct": 19.02,
       "index_return_pct": 0.45,
       "excess_pct": 18.57,
-      "updated_at": "2026-11-10T18:39:43+00:00"
+      "updated_at": "2026-11-11T18:39:15+00:00"
     },
     {
       "symbol": "UNIMECH.NS",
@@ -398,7 +398,7 @@
       "stock_return_pct": 38.94,
       "index_return_pct": -2.94,
       "excess_pct": 41.88,
-      "updated_at": "2026-11-10T18:39:43+00:00"
+      "updated_at": "2026-11-11T18:39:15+00:00"
     },
     {
       "symbol": "SAATVIKGL.NS",
@@ -423,7 +423,7 @@
       "stock_return_pct": -22.17,
       "index_return_pct": -2.21,
       "excess_pct": -19.96,
-      "updated_at": "2026-11-10T18:39:44+00:00"
+      "updated_at": "2026-11-11T18:39:15+00:00"
     },
     {
       "symbol": "UNOMINDA.NS",
@@ -448,7 +448,7 @@
       "stock_return_pct": 18.97,
       "index_return_pct": 2.67,
       "excess_pct": 16.3,
-      "updated_at": "2026-11-10T18:39:44+00:00"
+      "updated_at": "2026-11-11T18:39:15+00:00"
     }
   ]
 }
